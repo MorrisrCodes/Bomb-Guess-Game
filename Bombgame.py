@@ -3,6 +3,7 @@
 #section: 018
 
 import random 
+from turtle import * 
 
 #introduce game to user
 print("   ***   Defuse the Bomb!   ***  \n\n")
@@ -45,6 +46,41 @@ while guesses > 0 and rounds > 0:
         guess, guesses, digit = digitGuess(guess, digit)
         if guesses == 0:
             print("Game over. The digit was: ", digit)
+            x,y = pos()
+            penup()
+            setpos(x,y - 250)
+            pendown()
+            speed(10)
+            circle(200)
+            penup()
+
+            setpos(x , y -135)
+            pendown()
+            circle(80)
+            penup()
+
+            setpos(x + 60 , y + 140)
+            pendown()
+            left(90)
+            forward(50)
+            left(90)
+            forward(120)
+            left(90)
+            forward(50)
+            penup()
+
+            setpos(x , y + 190)
+            pendown()
+            right(180)
+            forward(75)
+            penup()
+
+            setpos(x , y + 265)
+            pendown()
+            color('red')
+            while True:
+                forward(200)
+                left(170)
             break
         if rounds == 0:
             print("Congratulations, you defused the bomb!")
